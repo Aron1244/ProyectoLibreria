@@ -1,0 +1,12 @@
+.control{
+    background-color: rgb(124, 67, 29);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 100px;
+    color: white;
+    text-align: center;
+
+
+}
