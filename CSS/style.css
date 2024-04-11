@@ -9,7 +9,7 @@ html, body{
 .contenido{
     min-height: 100vh;
     width: 100%;
-    background-color: wheat;
+    animation: animate 10s ease infinite;
 }
 
 footer{
@@ -20,3 +20,25 @@ footer{
     text-align: center;
 }
 
+.mapa{
+    max-width: 200px;
+    max-height: 100px;
+}
+
+@keyframes animate{
+    0%{
+        background-color: white;
+    }
+    25%{
+        background-color: wheat;
+    }
+    50%{
+        background-color: white;
+    }
+    75%{
+        background-color: wheat;
+    }
+    0%{
+        background-color: white;
+    }
+}
