@@ -1,5 +1,8 @@
 # ProyectoLibreria
 
+<div style="text-align: right;">
+   <img src=assets/logo_duoc-01.jpg width=200>
+</div>
 ![Logo DUOC](assets/logo_duoc-01.jpg)
 
 Este proyecto es una página web de una librería donde los clientes pueden comprar libros.
