@@ -1,6 +1,6 @@
 # ProyectoLibreria
 
-(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.duoc.cl%2Fkit-digital%2Flogos%2F&psig=AOvVaw3GccqrTizZrvZvCPZsEjv6&ust=1714703187692000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOCMp6T17YUDFQAAAAAdAAAAABAE)
+(assets/logo_duoc-01.jpg)
 
 Este proyecto es una página web de una librería donde los clientes pueden comprar libros.
 
