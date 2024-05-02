@@ -1,6 +1,8 @@
 # ProyectoLibreria
 
-<img src="assets/logo_duoc-01.jpg" alt="Logo DUOC" style="float: right;" width="200">
+<p align="right">
+  <img src="assets/logo_duoc-01.jpg" alt="Logo DUOC" width="200">
+</p>
 
 
 Este proyecto es una página web de una librería donde los clientes pueden comprar libros.
