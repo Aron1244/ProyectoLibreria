@@ -50,14 +50,13 @@
       </nav>
 
 
-    <div class="contenido">
+    <div class="contenido" id="contenido">
 
         <div class="row">
             <div class="col-2">
 
             </div>
-            <div class="col-8 content bg-light rounded w-50 mt-5 mb-5 m-auto row align-items-center m-5 shadow">
-
+            <div class="col-8 content rounded w-50 mt-5 mb-5 m-auto row align-items-center m-5 shadow">
                 <h1>Creación de usuario</h1>
                 <form>
                     <br>
@@ -115,25 +114,25 @@
 
 
 
-    <footer>
-        <div class="row">
-          <div class="col-4 mt-3">
-            
-          <p>Nuestra direccion es:</p>
-          <iframe class="mapa"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.2103953643264!2d-70.69778598795052!3d-33.46987267327075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c49490aff307%3A0xc647fc84296889c7!2sAnt%C3%A1rtica%2C%20Estaci%C3%B3n%20Central%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1sen!2scl!4v1712793450303!5m2!1sen!2scl"
-          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-    
-          </div>
-          <div class="col-4">
-            
-          </div>
-          <div class="col-4">
-            
-          </div>
+    <footer >
+      <div class="row">
+        <div class="col-4 mt-3">
+          
+        <p>Nuestra direccion es:</p>
+        <iframe class="mapa"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.2103953643264!2d-70.69778598795052!3d-33.46987267327075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c49490aff307%3A0xc647fc84296889c7!2sAnt%C3%A1rtica%2C%20Estaci%C3%B3n%20Central%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1sen!2scl!4v1712793450303!5m2!1sen!2scl"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+  
         </div>
-      </footer>
+        <div class="col-4">
+          <button class="btn fw-bold mt-5 shadow" id="modo-btn" style="background-color: white;" onclick="toggleTheme()">Cambiar modo</button>
+        </div>
+        <div class="col-4">
+          
+        </div>
+      </div>
+    </footer>
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -142,6 +141,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
