@@ -1,6 +1,6 @@
 # ProyectoLibreria
 
-(assets/logo_duoc-01.jpg)
+(/assets/logo_duoc-01.jpg)
 
 Este proyecto es una página web de una librería donde los clientes pueden comprar libros.
 
