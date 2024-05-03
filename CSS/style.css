@@ -5,8 +5,10 @@ body {
   min-height: 100vh;
   width: 100%;
   overflow: hidden;
-  margin-right: -15px; /* Ajusta según el ancho predeterminado de la barra de desplazamiento */
-  overflow-y: scroll; /* Asegúrate de que la barra de desplazamiento vertical esté siempre presente */
+  margin-right: -15px;
+  /* Ajusta según el ancho predeterminado de la barra de desplazamiento */
+  overflow-y: scroll;
+  /* Asegúrate de que la barra de desplazamiento vertical esté siempre presente */
 }
 
 
@@ -27,6 +29,54 @@ body {
   background-color: #312009;
   color: wheat;
   font-weight: bold;
+}
+
+
+.light-mode-footer {
+  background-color: rgb(124, 67, 29);
+  color: white;
+}
+
+.dark-mode-footer {
+  background-color: #221606;
+  color: wheat;
+  font-weight: bold;
+}
+
+/* Para editar los estilos del navbar de Bootstrap */
+
+.navbar-custom {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+}
+
+.navbar-custom .navbar-toggler-icon {
+  background-color: #ffffff !important;
+}
+
+.navbar-custom .navbar-toggler {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.navbar-custom .navbar-nav {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.navbar-custom .nav-item {
+  display: inline-block !important;
+  padding: 0 10px !important;
+}
+
+.navbar-custom .nav-link {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+.navbar-custom .nav-link:hover {
+  color: #cccccc !important;
 }
 
 footer {
