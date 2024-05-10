@@ -37,5 +37,5 @@ Aquí puedes listar las futuras implementaciones planeadas para tu proyecto. Por
 ## Créditos
 
 Este proyecto fue desarrollado por: 
-https://github.com/Aron1244 
-https://github.com/mauricio89777
+- https://github.com/Aron1244 
+- https://github.com/mauricio89777
