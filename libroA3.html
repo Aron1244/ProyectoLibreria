@@ -16,48 +16,44 @@
 </head>
 
 <body>
-    <nav id="navbar" class="navbar navbar-expand-lg text-uppercase fw-bold light-mode-footer">
+    <nav id="navbar" class="navbar navbar-expand-lg text-uppercase fw-bold light-mode-footer" >
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="assets/book-open.svg" alt="">Libreria</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-lg-0 fs-4 ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="catalogo.html">Catalogo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="contacto.html">Contacto</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="carrito.html"><img src="assets/shopping-cart.svg"
-                                alt=""></box-icon></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active text-lowercase" href="crearUsuario.html"><img src="assets/log-in.svg"
-                                alt="">Crear
-                            usuario</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active text-lowercase" href="login.html"><img src="assets/user.svg"
-                                alt="">iniciar sesion</a>
-                    </li>
-                    <li>
-                        <button class="btn fw-bold margin-left-3 rounded-circle p-1" id="modo-btn"
-                            style="background-color: #221606; border: white 2px; border-style: solid;"
-                            onclick="toggleTheme()"><img src="assets/sun (1).svg" alt=""></button>
-                    </li>
-                </ul>
-
-            </div>
+          <a class="navbar-brand" href="index.html"><img src="assets/ENTRE LIBROS.png" class="rounded-circle" style="width: 60px;">Entre Libros</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0 fs-4 ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="catalogo.html">Catalogo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="contacto.html">Contacto</a>
+              </li>
+              <li>
+                <a class="nav-link" href="carrito.html"><img src="assets/shopping-cart.svg" alt=""></box-icon></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-lowercase" href="crearUsuario.html"><img src="assets/log-in.svg" alt="">Crear
+                  usuario</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-lowercase" href="login.html"><img src="assets/user.svg" alt="">iniciar sesion</a>
+              </li>
+              <li>
+                <button class="btn fw-bold margin-left-3 rounded-circle p-1" id="modo-btn"
+                  style="background-color: #221606; border: white 2px; border-style: solid;" onclick="toggleTheme()"><img
+                    src="assets/sun (1).svg" alt=""></button>
+              </li>
+            </ul>
+    
+          </div>
         </div>
-    </nav>
+      </nav>
 
     <div class="contenido" id="contenido" style="overflow: hidden;">
 
@@ -147,24 +143,23 @@
 
 
 
-        <footer id="footer">
+        <footer id="footer" class="light-mode-footer">
             <div class="row">
-                <div class="col-4 mt-3">
-
-                    <p>Nuestra direccion es:</p>
-                    <iframe class="mapa"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.2103953643264!2d-70.69778598795052!3d-33.46987267327075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c49490aff307%3A0xc647fc84296889c7!2sAnt%C3%A1rtica%2C%20Estaci%C3%B3n%20Central%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1sen!2scl!4v1712793450303!5m2!1sen!2scl"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-                </div>
-                <div class="col-4">
-                </div>
-                <div class="col-4">
-
-                </div>
+              <div class="col-4 text-center">
+                <br>
+                <p>Nuestra direccion es:</p>
+                <p>
+                  <img src="assets/map-pin.svg" class="p-3">Av. Andrés Bello 2447 Local 1190
+                </p>
+                
+              </div>
+              <div class="col-4">
+              </div>
+              <div class="col-4">
+        
+              </div>
             </div>
-        </footer>
+          </footer>
 
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
