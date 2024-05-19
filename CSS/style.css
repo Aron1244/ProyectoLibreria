@@ -4,11 +4,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
   width: 100%;
-  /* overflow: hidden;
-  margin-right: -15px; */
-  /* Ajusta según el ancho predeterminado de la barra de desplazamiento */
-  /* overflow-y: scroll; */
-  /* Asegúrate de que la barra de desplazamiento vertical esté siempre presente */
 }
 
 
@@ -66,7 +61,7 @@ body {
 }
 
 .navbar-custom .nav-item {
-  display: inline-block !important;
+  display: inline-block !important; 
   padding: 0 10px !important;
 }
 
@@ -77,6 +72,20 @@ body {
 
 .navbar-custom .nav-link:hover {
   color: #cccccc !important;
+}
+
+
+.navbar img {
+  padding: 5px;
+  transition: transform 0.3s ease;
+}
+
+.navbar img:hover {
+  transform: scale(1.2);
+}
+
+.btn:hover {
+  transform: scale(1.1);
 }
 
 footer {
@@ -93,22 +102,15 @@ footer {
   max-height: 100px;
 }
 
-body,
-.navbar,
-footer {
-  margin: 0;
-  padding: 0;
-}
 
-/* Para navegadores WebKit (como Chrome y Safari) */
 ::-webkit-scrollbar {
-  width: 10px; /* Ancho de la barra de desplazamiento */
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Color de fondo de la barra de desplazamiento */
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888; /* Color de la barra de desplazamiento */
+  background: #888;
 }
