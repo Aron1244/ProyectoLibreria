@@ -59,7 +59,45 @@
 
   <div class="contenido text-center p-5" id="contenido">
     <h1>Menú Administrador</h1>
+    <div class="container mt-5">
+      <div class="row m-5 m-auto">
+        <div class="col">
+          <button class="btn btn-primary btn-lg btn-block">Ver Inventario</button>
+        </div>
+        <div class="col">
+          <button class="btn btn-primary btn-lg btn-block">Añadir Producto</button>
+        </div>
+        <div class="col">
+          <button class="btn btn-primary btn-lg btn-block">Eliminar Producto</button>
+        </div>
+      </div>
+      <div id="contenedorInventario" class="mt-5 rounded">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Nombre del Libro</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">ISBN</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Aquí puedes agregar filas con los datos de tus productos -->
+              <tr>
+                <td>El Camino de los Reyes</td>
+                <td>$44.000</td>
+                <td>10</td>
+                <td>9788466657662</td>
+              </tr>
+              <!-- Puedes agregar más filas según sea necesario -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
+  
 
 
 
