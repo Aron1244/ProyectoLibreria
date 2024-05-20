@@ -17,6 +17,8 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
   </head>
 
   <body>
@@ -98,7 +100,7 @@
           style="border-style: solid"
         >
           <h1>Creación de usuario</h1>
-          <form>
+          <form id="Sign_Usuario">
             <br />
             <div class="mb-3">
               <label for="inputNombre">Nombre</label>
@@ -107,7 +109,7 @@
                 class="form-control"
                 id="inputNombre"
                 placeholder="Escribe tu nombre"
-                required
+                
               />
             </div>
             <div class="mb-3">
@@ -117,7 +119,7 @@
                 class="form-control"
                 id="inputApellido"
                 placeholder="Escribe tu apellido"
-                required
+                
               />
             </div>
             <div class="mb-3">
@@ -132,7 +134,7 @@
                 class="form-control"
                 id="inputDireccion"
                 placeholder="Ingrese su dirección"
-                required
+                
               />
             </div>
             <div class="mb-3">
@@ -142,7 +144,7 @@
                 class="form-control"
                 id="inputUsuario"
                 placeholder="Ingrese su usuario"
-                required
+                
               />
             </div>
             <div class="mb-3">
@@ -152,7 +154,7 @@
                 class="form-control"
                 id="exampleInputEmail1"
                 placeholder="Escribe tu email"
-                required
+                
               />
             </div>
             <div class="mb-3">
@@ -164,7 +166,7 @@
                 class="form-control"
                 id="exampleInputPassword1"
                 placeholder="Escribe tu Contraseña"
-                required
+                
               />
             </div>
             <div class="mb-3 form-check">
@@ -172,7 +174,7 @@
                 type="checkbox"
                 class="form-check-input"
                 id="exampleCheck1"
-                required
+                
               />
               <label class="form-check-label" for="exampleCheck1"
                 >Acepta los terminos y servicios</label
@@ -218,5 +220,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/main.js"></script>
+    <script src="js/CrearUsuario.js"></script>
   </body>
 </html>
