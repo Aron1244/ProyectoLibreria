@@ -26,6 +26,7 @@ Para utilizar la Librería Online, simplemente accede a la URL del sitio web en 
 - HTML
 - CSS (Bootstrap)
 - JavaScript
+- JQuery
 
 ## Futuras Implementaciones
 
