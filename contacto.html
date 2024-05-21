@@ -18,7 +18,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
   </head>
 
   <body>
@@ -95,6 +94,7 @@
     <div class="contenido" id="contenido">
       <div class="row container-fluid d-block" style="padding: 0.1px">
         <div class="col"></div>
+
         <div
           class="col content w-25 mt-5 mb-5 m-auto row align-items-center shadow container-fluid"
           style="border-style: solid"
@@ -110,8 +110,9 @@
               >
             </ol>
             <ol>
-              <a href="mailto: Libreria@gmail.com"></a
-              >Correo : Libreria@gmail.com
+              <a href="mailto: EntreLibros@gmail.com"
+                >EntreLibros@ gmail .com</a
+              >
             </ol>
             <br />
             <ol>
@@ -121,6 +122,14 @@
               Somos una pequeña compañia que nacio el 2024 con la idea de
               generar un ambiente comodo para los usuarios y consumidores de
               libros
+            </ol>
+            <br />
+            <ol>
+              <h4>Misión</h4>
+              <p>
+                Ofrecer vision, conocimientos y una experiencia que inspiren y
+                fomenten la creatividad y permitan la autoexpresión artística.
+              </p>
             </ol>
           </ul>
         </div>
@@ -139,7 +148,6 @@
                 class="form-control"
                 id="exampleInputEmail1"
                 placeholder="Escribe tu email"
-                
               />
             </div>
 
@@ -150,7 +158,6 @@
                 class="form-control"
                 id="inputRut"
                 placeholder="Escribe tu rut o rut de empresa"
-                
               />
             </div>
 
@@ -161,7 +168,6 @@
                 class="form-control"
                 id="inputNombre"
                 placeholder="Escribe tu nombre"
-                
               />
             </div>
             <div class="mb-3">
@@ -171,7 +177,6 @@
                 class="form-control"
                 id="inputApellido"
                 placeholder="Escribe tu apellido"
-                
               />
             </div>
 
@@ -182,79 +187,29 @@
                 class="form-control"
                 id="inputTelefono"
                 placeholder="Ingrese su numero de telefono"
-                
               />
             </div>
 
             <div class="mb-3">
               <label for="inputEmpresa" class="form-label"
-              >Telefono Empresa</label
+                >Telefono Empresa</label
               >
               <input
                 type="text"
                 class="form-control"
                 id="inputEmpresa"
                 placeholder="telefono de empresa"
-                
               />
             </div>
-
-            <!-- <button type="submit" class="btn btn-primary m-3">CREAR</button> -->
-            <!-- Button trigger modal -->
-            <button
-              type="submit"
-              class="btn m-3 fw-bold"
-              data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop"
-              style="background-color: rgb(124, 67, 29); color: white"
-            >
-              Enviar Formulario
-            </button>
-
-            <!-- Modal --tuve que comentar este modal por que sino se ejecutaba el mensaje de formulario solamente al enviar -->
-             <!-- <div
-              class="modal fade"
-              id="staticBackdrop"
-              data-bs-backdrop="static"
-              data-bs-keyboard="false"
-              tabindex="-1"
-              aria-labelledby="staticBackdropLabel"
-              aria-hidden="true"
-            > 
-               <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title" id="staticBackdropLabel"></h1>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="modal-body fs-5">
-                    Se ha enviado el Formulario con exito.
-                  </div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Cerrar
-                    </button>
-                    <a href="./index.html"
-                      ><button
-                        type="button"
-                        class="btn fw-bold"
-                        style="background-color: rgb(124, 67, 29); color: white"
-                      >
-                        Entendido
-                      </button></a
-                    >
-                  </div>
-                </div>
-              </div>  -->
+            <div>
+              <button
+                type="submit"
+                class="btn m-3 fw-bold"
+                data-bs-target="#staticBackdrop"
+                style="background-color: rgb(124, 67, 29); color: white"
+              >
+                Enviar Formulario
+              </button>
             </div>
           </form>
         </div>
@@ -267,13 +222,39 @@
         <div class="col-4 text-center">
           <br />
           <p>Nuestra direccion es:</p>
-          <p>
-            <img src="assets/map-pin.svg" class="p-3" />Av. Andrés Bello 2447
-            Local 1190
-          </p>
+          <a
+            href="https://www.google.com/maps/place/Andr%C3%A9s+Bello+2447,+Local+1190,+7510689+Providencia,+Regi%C3%B3n+Metropolitana"
+            ><img src="assets/map-pin.svg" class="p-3" />
+          </a>
+          <p>Av. Andrés Bello 2447 Local 1190</p>
+
+          <a href="https://web.whatsapp.com/"
+            ><img src="assets/icons8-whatsapp(blanco).svg" alt=""
+          /></a>
+          <p>+56 9 7796 2091 ¡Sólo mensajes!</p>
         </div>
-        <div class="col-4"></div>
-        <div class="col-4"></div>
+
+        <div class="col-4">
+          <br />
+          <p>Todos los derechos reservados © 2024</p>
+        </div>
+
+        <div class="col-4">
+          <br />
+          <p>Siguenos en nuestras redes</p>
+          <a href="https://www.facebook.com/"
+            ><img
+              src="assets/icons8-facebook-nuevo(blanco).svg"
+              class="p-3"
+              alt=""
+          /></a>
+          <a href="https://www.instagram.com/"
+            ><img src="assets/icons8-instagram(blanco).svg" class="p-3" alt=""
+          /></a>
+          <a href="https://x.com/"
+            ><img src="assets/icons8-twitter(blanco).svg" class="p-3" alt=""
+          /></a>
+        </div>
       </div>
     </footer>
 
