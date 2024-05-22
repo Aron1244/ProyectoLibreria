@@ -13,11 +13,11 @@ $(document).ready(function () {
     var fecha = $("#inputNac").val();
 
     if (nombre.length < 3 || nombre.length > 15) {
-      alert("El nombre deben tener entre 3 y un maximo de 15 caracteres.");
+      alert("El nombre deben tener entre 3 y un máximo de 15 caracteres.");
       return;
     }
     if (apellido.length < 3 || apellido.length > 20) {
-      alert("El Apellido deben tener entre 3 y un maximo 20 caracteres.");
+      alert("El Apellido deben tener entre 3 y un máximo 20 caracteres.");
       return;
     }
 
@@ -31,7 +31,7 @@ $(document).ready(function () {
       return;
     }
     if (direccion.length < 10 || direccion.length > 20) {
-      alert("debe escribir la Direccion Completa");
+      alert("debe escribir la Dirección Completa");
       return;
     }
 

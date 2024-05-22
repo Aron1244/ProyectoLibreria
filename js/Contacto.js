@@ -22,31 +22,31 @@ $(document).ready(function () {
     }
 
     if (nombre.length < 3 || nombre.length > 15) {
-      alert("El nombre deben tener entre 3 y un maximo de 15 caracteres.");
+      alert("El nombre deben tener entre 3 y un máximo de 15 caracteres.");
       return;
     }
 
     if (apellido.length < 3 || apellido.length > 20) {
-      alert("El Apellido deben tener entre 3 y un maximo 20 caracteres.");
+      alert("El Apellido deben tener entre 3 y un máximo 20 caracteres.");
       return;
     }
 
     if (telefono.length < 9 || telefono.length > 13) {
-      alert("telefono invalido");
+      alert("teléfono invalido");
       return;
     } else if (!onlyNumber) {
-      alert("El telefono solo debe contener valores numericos");
+      alert("El teléfono solo debe contener valores numéricos");
     }
 
     if (Empresa_Fono.length < 9 || Empresa_Fono.length > 13) {
-      alert("telefono Debe tener almenos 9 numeros");
+      alert("telefono Debe tener al menos 9 números");
       return;
     } else if (!Validacion_numerica) {
       alert("El teléfono solo debe contener números.");
       return;
     }
 
-    alert("Formulario Enviado Con Exito");
+    alert("Formulario Enviado Con Éxito");
     window.location.href = "index.html";
     //  location.reload();
   });
