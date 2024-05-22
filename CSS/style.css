@@ -28,8 +28,9 @@ body {
 
 
 .light-mode-footer {
-  background-color: rgb(124, 67, 29);
+  background-color: rgba(192, 100, 38, 0.733);
   color: white;
+  font-weight: bold;
 }
 
 .dark-mode-footer {
