@@ -20,7 +20,7 @@ function setLightMode(content, footer, navbar) {
 
   navbar.classList.remove("dark-mode-footer");
   navbar.classList.add("light-mode-footer");
-  navbar.classList.remove("navbar-dark");
+  navbar.classList.add("navbar-dark");
 }
 
 function setDarkMode(content, footer, navbar) {
