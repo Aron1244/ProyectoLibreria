@@ -18,12 +18,18 @@ function loadCart() {
         <div class="col-md-2" style="text-align: center">
           <div class="row" style="text-align: center">${item.title}</div>
           <div class="row" style="text-align: center">${item.author}</div>
-          <div class="row" style="text-align: center; text-decoration: underline">
+          <div class="row" style="text-align: center">
             <button class="btn btn-danger" onclick="removeItem('${item.isbn}')">Eliminar</button>
           </div>
         </div>
+        <div class="col-md-2 col-lg-2">
+          <div class="row justify-content-center align-items-center">
+            <button class="btn btn-secondary" style="width: 30px;" onclick="decrementQuantity('${item.isbn}')">-</button>
+            <div>${item.quantity}</div>
+            <button class="btn btn-secondary" style="width: 30px;" onclick="incrementQuantity('${item.isbn}')">+</button>
+          </div>
+        </div>
         <div class="col-md-2 col-lg-3">${item.price}</div>
-        <div class="col">${item.quantity}</div>
         <div class="col">${totalItemPrice}</div>
       `;
     cartItemsContainer.appendChild(itemElement);
@@ -50,6 +56,35 @@ function removeItem(itemId) {
   loadCart();
 }
 
+function decrementQuantity(itemId) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const updatedCart = cart.map((item) => {
+    if (item.isbn === itemId && item.quantity > 1) {
+      item.quantity -= 1;
+    }
+    return item;
+  });
+  localStorage.setItem("cart", JSON.stringify(updatedCart));
+  loadCart();
+}
+
+function incrementQuantity(itemId) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const updatedCart = cart.map((item) => {
+    if (item.isbn === itemId) {
+      item.quantity += 1;
+    }
+    return item;
+  });
+  localStorage.setItem("cart", JSON.stringify(updatedCart));
+  loadCart();
+}
+
 window.onload = function () {
   loadCart();
 };
+
+function pagar() {
+  localStorage.removeItem("cart");
+  location.reload();
+}
