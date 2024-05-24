@@ -144,11 +144,14 @@
         <div class="row pb-3">
           <div class="col m-3"></div>
           <div class="col">
-            <a href="./carrito.html"
-              ><button type="button" class="btn btn-primary m-3">
-                COMPRAR
-              </button></a
+            <button
+              type="button"
+              class="btn btn-primary m-3"
+              id="comprar-btn-el-camino"
+              onclick="addToCart({ title: 'Juramentada', author: 'Brandon Sanderson', price: 50000, isbn: '9789585690677', image: 'assets/libro_3.webp' })"
             >
+              COMPRAR
+            </button>
             <a href="./catalogo.html"
               ><button type="button" class="btn btn-secondary m-3">
                 REGRESAR
@@ -223,5 +226,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/main.js"></script>
+    <script src="js/libro.js"></script>
   </body>
 </html>

@@ -144,11 +144,14 @@
         <div class="row pb-3">
           <div class="col m-3"></div>
           <div class="col">
-            <a href="./carrito.html"
-              ><button type="button" class="btn btn-primary m-3">
-                COMPRAR
-              </button></a
+            <button
+              type="button"
+              class="btn btn-primary m-3"
+              id="comprar-btn-el-camino"
+              onclick="addToCart({ title: 'Canción de Susannah', author: 'Stephen King', price: 30700, isbn: '9506440719', image: 'assets/La Torrre oscura 6 Cancion de susannah.jpg' })"
             >
+              COMPRAR
+            </button>
             <a href="./catalogo.html"
               ><button type="button" class="btn btn-secondary m-3">
                 REGRESAR
@@ -223,5 +226,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/main.js"></script>
+    <script src="js/libro.js"></script>
   </body>
 </html>

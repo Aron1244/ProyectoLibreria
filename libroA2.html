@@ -144,11 +144,14 @@
         <div class="row pb-3">
           <div class="col m-3"></div>
           <div class="col">
-            <a href="./carrito.html"
-              ><button type="button" class="btn btn-primary m-3">
-                COMPRAR
-              </button></a
+            <button
+              type="button"
+              class="btn btn-primary m-3"
+              id="comprar-btn-el-camino"
+              onclick="addToCart({ title: 'Palabras Radiantes', author: 'Brandon Sanderson', price: 48000, isbn: '9788466657549', image: 'assets/libro_2.webp' })"
             >
+              COMPRAR
+            </button>
             <a href="./catalogo.html"
               ><button type="button" class="btn btn-secondary m-3">
                 REGRESAR
@@ -158,7 +161,7 @@
         </div>
       </div>
     </div>
-    
+
     <footer id="footer" class="light-mode-footer">
       <div class="row">
         <div class="col-4 text-center">
@@ -223,5 +226,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/main.js"></script>
+    <script src="js/libro.js"></script>
   </body>
 </html>
