@@ -22,7 +22,7 @@ function loadCart() {
             <button class="btn btn-danger" onclick="removeItem('${item.isbn}')">Eliminar</button>
           </div>
         </div>
-        <div class="col-md-2 col-lg-2">
+        <div class="col-md-2 col-lg-2" style="margin-left: 100px">
           <div class="row justify-content-center align-items-center">
             <button class="btn btn-secondary" style="width: 30px;" onclick="decrementQuantity('${item.isbn}')">-</button>
             <div>${item.quantity}</div>
@@ -107,6 +107,6 @@ function applyCoupon() {
   }
 
   // Actualiza el total en el carrito
-  document.getElementById("total").textContent = total.toFixed(2);
+  document.getElementById("total").textContent = total.toFixed(0);
   alert(`Cupón "${cuponInput}" aplicado correctamente`);
 }
