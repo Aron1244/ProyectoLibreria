@@ -126,10 +126,22 @@
                   class="row"
                   style="text-align: left; text-decoration: underline"
                 >
-                  <a
-                    ><box-icon name="purchase-tag-alt"></box-icon>Ingresar cupón
-                    de descuento</a
-                  >
+                  <div class="row">
+                    <div class="col-md-8 col-lg-7" style="text-align: left">
+                      <div
+                        class="row"
+                        style="text-align: left; text-decoration: underline"
+                      >
+                        <label for="cuponInput"
+                          >Ingresar cupón de descuento</label
+                        >
+                        <input type="text" id="cuponInput" class="rounded" placeholder="Cupón de descuento" style="width: 200px;" />
+                        <button class="btn btn-secondary m-2" style="width: 200px;" onclick="applyCoupon()">
+                          Aplicar
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="col">
@@ -167,7 +179,13 @@
                     <p class="mb-0" id="total">0</p>
                   </div>
                 </div>
-                <button class="btn m-3" style="width: 300px;border-color: white; border-style: solid;" onclick="pagar()">Pagar</button>
+                <button
+                  class="btn m-3"
+                  style="width: 300px; border-color: white; border-style: solid"
+                  onclick="pagar()"
+                >
+                  Pagar
+                </button>
               </div>
             </div>
           </div>

@@ -88,3 +88,25 @@ function pagar() {
   localStorage.removeItem("cart");
   location.reload();
 }
+
+function applyCoupon() {
+  const cuponInput = document.getElementById("cuponInput").value;
+  let subtotal = parseFloat(document.getElementById("subtotal").textContent);
+  let total = parseFloat(document.getElementById("total").textContent);
+
+  switch (cuponInput) {
+    case "Primera-Compra":
+      total *= 0.8; // Aplica un descuento del 20%
+      break;
+    case "50-descuento":
+      total *= 0.5; // Aplica un descuento del 50%
+      break;
+    default:
+      alert("Cupón no válido");
+      return;
+  }
+
+  // Actualiza el total en el carrito
+  document.getElementById("total").textContent = total.toFixed(2);
+  alert(`Cupón "${cuponInput}" aplicado correctamente`);
+}
