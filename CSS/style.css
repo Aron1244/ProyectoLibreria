@@ -97,6 +97,11 @@ footer {
 .iconoFooter {
   width: 40px;
   padding: 5px;
+  transition: transform 0.3s ease;
+}
+
+.iconoFooter:hover {
+  transform: scale(1.2);
 }
 
 .mapa {
