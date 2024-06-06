@@ -8,5 +8,5 @@ function addToCart(book) {
     cart.push(book);
   }
   localStorage.setItem("cart", JSON.stringify(cart));
-  alert("Libro añadido al carrito");
+  window.location.href = "catalogo.html";
 }
