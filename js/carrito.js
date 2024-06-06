@@ -29,24 +29,28 @@ function loadCart() {
             <button class="btn btn-secondary" style="width: 30px;" onclick="incrementQuantity('${item.isbn}')">+</button>
           </div>
         </div>
-        <div class="col-md-2 col-lg-3">${item.price}</div>
-        <div class="col">${totalItemPrice}</div>
+        <div class="col-md-2 col-lg-3">${formatCurrency(item.price)}</div>
+        <div class="col">${formatCurrency(totalItemPrice)}</div>
       `;
     cartItemsContainer.appendChild(itemElement);
   });
 
   // Update subtotal
-  document.getElementById("subtotal").textContent = subtotal;
+  document.getElementById("subtotal").textContent = formatCurrency(subtotal);
   // Calculate shipping
   const shippingCost = calculateShipping(subtotal);
-  document.getElementById("envio").textContent = shippingCost;
+  document.getElementById("envio").textContent = formatCurrency(shippingCost);
   // Update total
   const total = subtotal + shippingCost;
-  document.getElementById("total").textContent = total;
+  document.getElementById("total").textContent = formatCurrency(total);
+}
+
+function formatCurrency(value) {
+  return `$${value.toLocaleString('es-CL', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
 }
 
 function calculateShipping(subtotal) {
-  return 0;
+  return 0; // Aquí puedes agregar tu lógica para calcular el envío si es necesario
 }
 
 function removeItem(itemId) {
@@ -91,8 +95,7 @@ function pagar() {
 
 function applyCoupon() {
   const cuponInput = document.getElementById("cuponInput").value;
-  let subtotal = parseFloat(document.getElementById("subtotal").textContent);
-  let total = parseFloat(document.getElementById("total").textContent);
+  let total = parseFloat(document.getElementById("total").textContent.replace(/[$.]/g, '').replace(',', '.'));
 
   switch (cuponInput) {
     case "Primera-Compra":
@@ -107,6 +110,6 @@ function applyCoupon() {
   }
 
   // Actualiza el total en el carrito
-  document.getElementById("total").textContent = total.toFixed(0);
+  document.getElementById("total").textContent = formatCurrency(total);
   alert(`Cupón "${cuponInput}" aplicado correctamente`);
 }
