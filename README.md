@@ -40,3 +40,6 @@ Aquí puedes listar las futuras implementaciones planeadas para tu proyecto. Por
 Este proyecto fue desarrollado por: 
 - https://github.com/Aron1244 
 - https://github.com/mauricio89777
+
+> .[!NOTE].
+> nota de prueba
