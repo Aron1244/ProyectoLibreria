@@ -41,5 +41,5 @@ Este proyecto fue desarrollado por:
 - https://github.com/Aron1244 
 - https://github.com/mauricio89777
 
-> .[!NOTE].
-> nota de prueba
+> .[!TIP].
+> Para hacer funcionar el proyecto se requiere python para hacer funcionar la terminal con Django
