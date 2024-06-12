@@ -107,10 +107,10 @@
       >
         <h1 class="text-center">Iniciar sesión</h1>
         <hr />
-        <form
-          id="formularioInicioSesion"
-          onsubmit="return iniciarSesion(event)"
-        >
+        <form method="post">
+          {% csrf_token %} {% if error %}
+          <div class="alert alert-danger">{{ error }}</div>
+          {% endif %}
           <br />
           <div class="mb-3 text-center">
             <label for="inputUsuario">Usuario</label>
@@ -118,6 +118,7 @@
               type="text"
               class="form-control text-center"
               id="inputUsuario"
+              name="username"
               placeholder="Escribe tu usuario"
             />
           </div>
@@ -127,6 +128,7 @@
               type="password"
               class="form-control text-center"
               id="inputContra"
+              name="password"
               placeholder="Escribe tu Contraseña"
             />
           </div>
@@ -215,6 +217,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="{% static 'js/main.js' %}"></script>
-    <script src="{% static 'js/login.js' %}"></script>
   </body>
 </html>

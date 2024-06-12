@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
 
 # Create your views here.
 
@@ -22,9 +23,22 @@ def crearUsuario(request):
     context={}
     return render(request, 'entreLibros/crearUsuario.html', context)
 
-def login(request):
-    context={}
-    return render(request, 'entreLibros/login.html', context)
+def custom_login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        
+        # Autenticar al usuario
+        user = authenticate(request, username=username, password=password)
+        
+        if user is not None:
+            login(request, user)
+            return redirect('/admin/')  # Redirigir al panel de administración de Django
+        else:
+            # Mensaje de depuración
+            print(f"Failed login attempt with username: {username} and password: {password}")
+            return render(request, 'entreLibros/login.html', {'error': 'Usuario o contraseña incorrectos.'})
+    return render(request, 'entreLibros/login.html')
 
 def libroA1(request):
     context={}
