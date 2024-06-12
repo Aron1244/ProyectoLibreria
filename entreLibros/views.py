@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -33,7 +34,10 @@ def custom_login_view(request):
         
         if user is not None:
             login(request, user)
-            return redirect('/admin/')  # Redirigir al panel de administración de Django
+            if user.is_superuser:
+                return redirect('/admin/')  # Redirigir al panel de administración de Django
+            else:
+                return redirect('/')  # Redirigir a la página de inicio (o cualquier otra página para usuarios regulares)
         else:
             # Mensaje de depuración
             print(f"Failed login attempt with username: {username} and password: {password}")
