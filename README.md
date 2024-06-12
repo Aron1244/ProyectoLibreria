@@ -27,12 +27,12 @@ Para utilizar la Librería Online, simplemente accede a la URL del sitio web en 
 - CSS (Bootstrap)
 - JavaScript
 - JQuery
+- Django
 
 ## Futuras Implementaciones
 
 Aquí puedes listar las futuras implementaciones planeadas para tu proyecto. Por ejemplo:
 
-- Integración de un backend utilizando Django.
 - Mejoras en la interfaz de usuario para una experiencia de compra más intuitiva.
 
 ## Créditos
