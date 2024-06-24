@@ -26,8 +26,8 @@ def crearUsuario(request):
 
 def custom_login_view(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
+        username = request.POST.get('username')
+        password = request.POST.get('password')
         
         # Autenticar al usuario
         user = authenticate(request, username=username, password=password)
@@ -35,13 +35,21 @@ def custom_login_view(request):
         if user is not None:
             login(request, user)
             if user.is_superuser:
-                return redirect('/admin/')  # Redirigir al panel de administración de Django
+                # Si es superusuario, redirigir al panel de administración de Django
+                return redirect('/admin/')
+            elif user.username == 'admin1':
+                # Si el usuario es 'admin1', redirigir a una template personalizada de administrador
+                print(f"Usuario {username} autenticado como admin1")
+                return render(request, 'entreLibros/admin.html')
             else:
-                return redirect('/')  # Redirigir a la página de inicio (o cualquier otra página para usuarios regulares)
+                # Si no es superusuario ni 'admin1', redirigir a la página de inicio
+                return redirect('/')
         else:
-            # Mensaje de depuración
-            print(f"Failed login attempt with username: {username} and password: {password}")
-            return render(request, 'entreLibros/login.html', {'error': 'Usuario o contraseña incorrectos.'})
+            # Si la autenticación falla, mostrar mensaje de error
+            error_message = 'Usuario o contraseña incorrectos.'
+            return render(request, 'entreLibros/login.html', {'error': error_message})
+    
+    # Si el método de solicitud no es POST, simplemente renderiza el formulario de inicio de sesión
     return render(request, 'entreLibros/login.html')
 
 def libroA1(request):
@@ -67,3 +75,7 @@ def libroB2(request):
 def libroB3(request):
     context={}
     return render(request, 'entreLibros/libroB3.html', context)
+
+def admin(request):
+    context={}
+    return render(request, 'entreLibros/admin.html', context)

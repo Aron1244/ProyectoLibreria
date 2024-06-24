@@ -14,4 +14,5 @@ urlpatterns = [
     path('libroB1.html', views.libroB1, name='libroB1'),
     path('libroB2.html', views.libroB2, name='libroB2'),
     path('libroB3.html', views.libroB3, name='libroB3'),
+    path('admin.html', views.admin, name='admin'),
 ]
