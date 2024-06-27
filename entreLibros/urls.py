@@ -15,4 +15,8 @@ urlpatterns = [
     path('libroB2.html', views.libroB2, name='libroB2'),
     path('libroB3.html', views.libroB3, name='libroB3'),
     path('admin.html', views.admin, name='admin'),
+    path('crud_usuarios', views.crud_usuarios, name='crud_usuarios'),
+    path('usuariosAdd', views.usuariosAdd, name='usuariosAdd'),
+    path('usuarios_del/<str:pk>',views.usuarios_del,name='usuarios_del'),
+    path('usuarios_edit/<str:pk>',views.usuarios_edit,name='usuarios_edit')
 ]

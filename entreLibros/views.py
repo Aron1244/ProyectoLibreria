@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
+from . models import Usuario
+
+from . forms import UsuarioForm
+
 
 # Create your views here.
 
@@ -79,3 +83,81 @@ def libroB3(request):
 def admin(request):
     context={}
     return render(request, 'entreLibros/admin.html', context)
+
+def crud_usuarios(request):
+
+    usuarios = Usuario.objects.all()
+    context = {'usuarios': usuarios}
+    print("Enviando datos usuarios_list")
+    return render(request, 'entreLibros/usuarios_list.html', context)
+
+def usuariosAdd(request):
+    print("Estoy controlando usuariosAdd...")
+    context={}
+
+    if request.method == "POST":
+        print("Controlador es un post...")
+        form = UsuarioForm(request.POST)
+
+        if form.is_valid:
+            print("Estoy en agregar, is_valid")
+            form.save()
+
+            #limpiar forms
+            form=UsuarioForm()
+
+            context = {'mensaje':"Ok, datos grabados...", "form":form}
+            return render(request, "entreLibros/usuarios_add.html",context)
+        else:
+            context = {'form':form}
+    else:
+        form = UsuarioForm()
+        context = {'form':form}
+        return render(request, 'entreLibros/usuarios_add.html',context)
+
+def usuarios_del(request, pk):
+    mensajes = []
+    errores = []
+    context = {}
+
+    try:
+        usuario = Usuario.objects.get(id_usuario=pk)
+        usuario.delete()
+        mensajes.append("Bien, datos eliminados...")
+    except Usuario.DoesNotExist:
+        errores.append("Error, id no existe")
+    except Exception as e:
+        errores.append(f"Error inesperado: {str(e)}")
+    
+    usuarios = Usuario.objects.all()
+    context = {'usuarios': usuarios, 'mensajes': mensajes, 'errores': errores}
+    return render(request, 'entreLibros/usuarios_list.html', context)
+
+
+def usuarios_edit(request,pk):
+    try:
+        usuario = Usuario.objects.get(id_usuario=pk)
+        context = {}
+        if usuario:
+            print("Edit encontro el usuario...")
+            if request.method == "POST":
+                print("Edit, es un POST")
+                form = UsuarioForm(request.POST, instance=usuario)
+                form.save()
+                mensaje = "Bien, datos actualizados..."
+                print(mensaje)
+                context = {'usuario':usuario, 'form':form, 'mensaje':mensaje}
+                return render(request, 'entreLibros/usuarios_edit.html', context)
+            else:
+                # no es un POST
+                print("Edit, NO es un POST")
+                form = UsuarioForm(instance=usuario)
+                mensaje = ""
+                context = {'usuario':usuario, 'form':form, 'mensaje':mensaje}
+                return render(request, 'entreLibros/usuarios_edit.html', context)
+    except:
+        print("Error, id no existe...")
+        usuarios = Usuario.objects.all()
+        mensaje = "Error, id no existe"
+        context = {'mensaje':mensaje, 'usuarios':usuarios}
+        return render(request, 'entreLibros/usuarios_list.html', context)

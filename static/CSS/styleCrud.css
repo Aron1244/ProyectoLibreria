@@ -1,0 +1,14 @@
+body{
+    margin: 0 !important; 
+    padding: 0 !important;
+}
+
+h1{
+    text-align: center;
+}
+
+table{
+    margin: auto !important;
+    padding: 100px !important;
+    font-size: larger !important;
+}
