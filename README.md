@@ -34,6 +34,7 @@ Para utilizar la Librería Online llamada "Entre Libros", simplemente accede a l
 Aquí puedes listar las futuras implementaciones planeadas para tu proyecto. Por ejemplo:
 
 - Mejoras en la interfaz de usuario para una experiencia de compra más intuitiva.
+- Agregar lista de libros favoritos para cada usuario
 
 ## Créditos
 
