@@ -4,7 +4,7 @@
 
 # ProyectoLibreria
 
-Este proyecto es una página web de una librería donde los clientes pueden comprar libros.
+Este proyecto es una plantilla de una página web de una librería donde los clientes pueden comprar libros.
 
 ## Tabla de Contenidos
 - [Descripción](#descripción)
