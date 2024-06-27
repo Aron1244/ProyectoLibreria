@@ -93,7 +93,7 @@
       </div>
     </nav>
 
-    <div class="contenido">
+    <div class="contenido" id="contenido">
       <div style="text-align: center">
         {% if usuario %}
         <h2>Formulario actualizar Usuario</h2>
@@ -101,7 +101,7 @@
         <form action="" method="POST">
           {% csrf_token %} {{form.as_p}}
 
-          <input type="submit" name="opcion" value="Actualizar" />
+          <input type="submit" name="opcion" value="Actualizar" class="btn btn-secondary"/>
         </form>
         <br /><br />
         {% endif %}
@@ -175,5 +175,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="{% static 'js/main.js' %}"></script>
   </body>
 </html>

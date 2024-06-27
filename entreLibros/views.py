@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect
-from . models import Usuario
+from . models import Usuario, Categoria
 
-from . forms import UsuarioForm
+from . forms import UsuarioForm, CategoriaForm
 
 
 # Create your views here.
@@ -84,6 +84,8 @@ def admin(request):
     context={}
     return render(request, 'entreLibros/admin.html', context)
 
+# CRUD USUARIOS
+
 def crud_usuarios(request):
 
     usuarios = Usuario.objects.all()
@@ -161,3 +163,83 @@ def usuarios_edit(request,pk):
         mensaje = "Error, id no existe"
         context = {'mensaje':mensaje, 'usuarios':usuarios}
         return render(request, 'entreLibros/usuarios_list.html', context)
+    
+# CRUD CATEGORIA
+
+def crud_categoria(request):
+
+    categorias = Categoria.objects.all()
+    context = {'categorias': categorias}
+    print("Enviando datos categorias_list")
+    return render(request, 'entreLibros/categoria_list.html', context)
+
+def categoriaAdd(request):
+    print("Estoy controlando categoriaAdd...")
+    context={}
+
+    if request.method == "POST":
+        print("Controlador es un post...")
+        form = CategoriaForm(request.POST)
+
+        if form.is_valid:
+            print("Estoy en agregar, is_valid")
+            form.save()
+
+            #limpiar forms
+            form=CategoriaForm()
+
+            context = {'mensaje':"Ok, datos grabados...", "form":form}
+            return render(request, "entreLibros/categoria_add.html",context)
+        else:
+            context = {'form':form}
+    else:
+        form = CategoriaForm()
+        context = {'form':form}
+        return render(request, 'entreLibros/categoria_add.html',context)
+
+def categoria_del(request, pk):
+    mensajes = []
+    errores = []
+    context = {}
+
+    try:
+        categoria = Categoria.objects.get(id_categoria=pk)
+        categoria.delete()
+        mensajes.append("Bien, datos eliminados...")
+    except Categoria.DoesNotExist:
+        errores.append("Error, id no existe")
+    except Exception as e:
+        errores.append(f"Error inesperado: {str(e)}")
+    
+    categorias = Categoria.objects.all()
+    context = {'categorias': categorias, 'mensajes': mensajes, 'errores': errores}
+    return render(request, 'entreLibros/categoria_list.html', context)
+
+
+def categoria_edit(request,pk):
+    try:
+        categoria = Categoria.objects.get(id_categoria=pk)
+        context = {}
+        if categoria:
+            print("Edit encontró la categoria...")
+            if request.method == "POST":
+                print("Edit, es un POST")
+                form = CategoriaForm(request.POST, instance=categoria)
+                form.save()
+                mensaje = "Bien, datos actualizados..."
+                print(mensaje)
+                context = {'categoria':categoria, 'form':form, 'mensaje':mensaje}
+                return render(request, 'entreLibros/categoria_edit.html', context)
+            else:
+                # no es un POST
+                print("Edit, NO es un POST")
+                form = CategoriaForm(instance=categoria)
+                mensaje = ""
+                context = {'categoria':categoria, 'form':form, 'mensaje':mensaje}
+                return render(request, 'entreLibros/categoria_edit.html', context)
+    except:
+        print("Error, id no existe...")
+        categorias = Categoria.objects.all()
+        mensaje = "Error, id no existe"
+        context = {'mensaje':mensaje, 'categorias':categorias}
+        return render(request, 'entreLibros/categoria_list.html', context)

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Añadir Usuarios</title>
+    <title>Añadir Categoria</title>
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'CSS/style.css'%}" />
@@ -95,13 +95,13 @@
     </nav>
 
     <div class="contenido" id="contenido">
-      <h1 class="text-center">Editar Usuarios</h1>
+      <h1 class="text-center">Editar Categoría</h1>
       <div class="d-flex justify-content-center mb-4">
         <a href="admin.html" class="btn btn-link">Volver al Menú</a>
       </div>
 
       <div class="text-center mb-4">
-        <a href="{% url 'usuariosAdd' %}" class="btn btn-secondary">Agregar</a>
+        <a href="{% url 'categoriaAdd' %}" class="btn btn-secondary">Agregar</a>
       </div>
 
       <div id="idMensajes">
@@ -122,40 +122,28 @@
 
       <div class="table-responsive">
         <table class="table table-striped table-bordered">
-          {% if usuarios %}
+          {% if categorias %}
           <thead>
             <tr>
-              <th>Nombre</th>
-              <th>Apellido</th>
-              <th>Fecha nacimiento</th>
-              <th>Dirección</th>
-              <th>Email</th>
-              <th>Nombre usuario</th>
-              <th>Contraseña</th>
+              <th>Categoría</th>
               <th>Eliminar</th>
               <th>Modificar</th>
             </tr>
           </thead>
           <tbody>
-            {% for x in usuarios %}
+            {% for x in categorias %}
             <tr>
-              <td>{{ x.nombre }}</td>
-              <td>{{ x.apellido }}</td>
-              <td>{{ x.fec_nac }}</td>
-              <td>{{ x.direccion }}</td>
-              <td>{{ x.correo }}</td>
-              <td>{{ x.user_name }}</td>
-              <td>{{ x.password }}</td>
+              <td>{{ x.nombre_categoria }}</td>
               <td>
                 <a
-                  href="{% url 'usuarios_del' pk=x.id_usuario %}"
+                  href="{% url 'categoria_del' pk=x.id_categoria %}"
                   class="btn btn-danger btn-sm"
                   >Eliminar</a
                 >
               </td>
               <td>
                 <a
-                  href="{% url 'usuarios_edit' pk=x.id_usuario %}"
+                  href="{% url 'categoria_edit' pk=x.id_categoria %}"
                   class="btn btn-primary btn-sm"
                   >Modificar</a
                 >

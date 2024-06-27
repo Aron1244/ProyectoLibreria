@@ -18,5 +18,9 @@ urlpatterns = [
     path('crud_usuarios', views.crud_usuarios, name='crud_usuarios'),
     path('usuariosAdd', views.usuariosAdd, name='usuariosAdd'),
     path('usuarios_del/<str:pk>',views.usuarios_del,name='usuarios_del'),
-    path('usuarios_edit/<str:pk>',views.usuarios_edit,name='usuarios_edit')
+    path('usuarios_edit/<str:pk>',views.usuarios_edit,name='usuarios_edit'),
+    path('crud_categoria', views.crud_categoria, name='crud_categoria'),
+    path('categoriaAdd', views.categoriaAdd, name='categoriaAdd'),
+    path('categoria_del/<str:pk>',views.categoria_del,name='categoria_del'),
+    path('categoria_edit/<str:pk>',views.categoria_edit,name='categoria_edit')
 ]
