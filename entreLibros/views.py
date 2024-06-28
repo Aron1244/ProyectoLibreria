@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect
-from . models import Usuario, Categoria
+from . models import Usuario, Categoria, Libro
 
-from . forms import UsuarioForm, CategoriaForm
+from . forms import UsuarioForm, CategoriaForm, Libroform
 
 
 # Create your views here.
@@ -243,3 +243,94 @@ def categoria_edit(request,pk):
         mensaje = "Error, id no existe"
         context = {'mensaje':mensaje, 'categorias':categorias}
         return render(request, 'entreLibros/categoria_list.html', context)
+    
+
+#crud libro
+def crudlibro(request):
+    
+    libros = Libro.objects.all()
+    context = {'libros': libros}
+    print("Enviado datos libros_list ....")
+    return render(request, 'entreLibros/libro_list.html', context)
+
+
+def addlibro(request):
+    print("estoy controlando addlibro")
+    context={}
+
+    if request.method == "POST":
+        print("Controlador es un post...")
+        form = Libroform(request.POST)
+
+        if form.is_valid:
+            print("Estoy en agregar, is_valid")
+            form.save()
+
+            #limpiando form
+            form=Libroform()
+
+            context = {'mensaje': "Ok, datos grabados", "form":form}
+            return render(request, "entreLibros/addlibro.html", context)
+        else:
+            context = {'form': form}
+
+    else:
+        form = Libroform()
+        context = {'form':form}
+        return render(request, 'entreLibros/addlibro.html',context)
+    
+
+
+def libro_del(request, pk):
+    mensajes = []
+    errores = []
+    context = {}
+
+    try:
+        libro = Libro.objects.get(isbn=pk)
+        libro.delete()
+        mensajes.append("Bien, datos eliminados...")
+    except Libro.DoesNotExist:
+        errores.append("ERROR, ISBN no existe")
+    except Exception as e:
+        errores.append(f"ERROR inesperado: {str(e)}")
+    
+    libros = Libro.objects.all()
+    context = {'libros': libros, 'mensajes': mensajes, 'errores': errores}
+    return render(request, 'entreLibros/libro_list.html', context)
+
+
+
+#no me salta el contenido de editar, me sale el print de edit encontro el libro
+#despues el de edit no es un post. no puede solucionar el error
+def libro_Edit(request,pk):
+    try:
+        libro = Libro.objects.get(isbn=pk)
+        context = {}
+        if libro:
+            print("edit encontro el libro...")
+            if request.method == "POST":
+                print("Edit, es un POST")
+                form = Libroform(request.POST, instance=libro)
+                form.save()
+                mensaje= "Bien, datos actualizados..."
+                print(mensaje)
+                context = {'libro': libro, 'form':form, 'mensaje':mensaje}
+                return render(request, 'entreLibros/libro_edit.html', context)
+            else:
+                #no post
+                print("Edit, No es un post")
+                form = Libroform(instance=libro)
+                mensaje = ""
+                context = {'libro': libro, 'form':form, 'mensaje':mensaje}
+                return render(request, 'entreLibros/libro_edit.html', context)
+            
+    except:
+        print("Error, isbn no existe...")
+        libros = Libro.objects.all()
+        mensaje = "ERROR, isbn no existe"
+        context = {'mensaje': mensaje, 'libros': libros}
+        return render(request, 'entreLibros/libro_list.html', context)
+
+
+

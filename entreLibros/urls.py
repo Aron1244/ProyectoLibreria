@@ -22,5 +22,12 @@ urlpatterns = [
     path('crud_categoria', views.crud_categoria, name='crud_categoria'),
     path('categoriaAdd', views.categoriaAdd, name='categoriaAdd'),
     path('categoria_del/<str:pk>',views.categoria_del,name='categoria_del'),
-    path('categoria_edit/<str:pk>',views.categoria_edit,name='categoria_edit')
+    path('categoria_edit/<str:pk>',views.categoria_edit,name='categoria_edit'),
+    #libro por cierto me fije que cuando estamos en crudlibro el cambio de tema no funciona
+    path('crudlibro', views.crudlibro, name='crudlibro'),
+    path('addlibro', views.addlibro, name='addlibro'),
+    path('libro_del/<str:pk>', views.libro_del, name='libro_del'),
+    path('libro_Edit/<str:pk>', views.libro_Edit, name='libro_Edit'),
+    
+
 ]
