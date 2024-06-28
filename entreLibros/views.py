@@ -301,9 +301,7 @@ def libro_del(request, pk):
 
 
 
-#no me salta el contenido de editar, me sale el print de edit encontro el libro
-#despues el de edit no es un post. no puede solucionar el error
-def libro_Edit(request,pk):
+def libro_Edit(request, pk):
     try:
         libro = Libro.objects.get(isbn=pk)
         context = {}
@@ -312,25 +310,30 @@ def libro_Edit(request,pk):
             if request.method == "POST":
                 print("Edit, es un POST")
                 form = Libroform(request.POST, instance=libro)
-                form.save()
-                mensaje= "Bien, datos actualizados..."
-                print(mensaje)
-                context = {'libro': libro, 'form':form, 'mensaje':mensaje}
+                if form.is_valid():
+                    form.save()
+                    mensaje = "Bien, datos actualizados..."
+                    print(mensaje)
+                    context = {'libro': libro, 'form': form, 'mensaje': mensaje}
+                else:
+                    mensaje = "Error, datos no válidos..."
+                    context = {'libro': libro, 'form': form, 'mensaje': mensaje}
                 return render(request, 'entreLibros/libro_edit.html', context)
             else:
-                #no post
+                # no post
                 print("Edit, No es un post")
                 form = Libroform(instance=libro)
                 mensaje = ""
-                context = {'libro': libro, 'form':form, 'mensaje':mensaje}
+                context = {'libro': libro, 'form': form, 'mensaje': mensaje}
                 return render(request, 'entreLibros/libro_edit.html', context)
-            
-    except:
+    except Libro.DoesNotExist:
         print("Error, isbn no existe...")
         libros = Libro.objects.all()
         mensaje = "ERROR, isbn no existe"
         context = {'mensaje': mensaje, 'libros': libros}
         return render(request, 'entreLibros/libro_list.html', context)
+
+
 
 
 
