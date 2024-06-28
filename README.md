@@ -4,7 +4,7 @@
 
 # ProyectoLibreria
 
-Este proyecto es una página web de una librería donde los clientes pueden comprar libros.
+Este proyecto es una plantilla de una página web de una librería donde los clientes pueden comprar libros.
 
 ## Tabla de Contenidos
 - [Descripción](#descripción)
@@ -34,6 +34,7 @@ Para utilizar la Librería Online llamada "Entre Libros", simplemente accede a l
 Aquí puedes listar las futuras implementaciones planeadas para tu proyecto. Por ejemplo:
 
 - Mejoras en la interfaz de usuario para una experiencia de compra más intuitiva.
+- Agregar lista de libros favoritos para cada usuario
 
 ## Créditos
 
