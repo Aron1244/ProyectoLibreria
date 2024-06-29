@@ -136,6 +136,7 @@
               <th>Precio</th>
               <th>Categoría</th>
               <th>Portada</th>
+              <th>Cantidad</th>
               <th>Eliminar</th>
               <th>Modificar</th>
             </tr>
@@ -163,6 +164,7 @@
                 <p>imagen no disponible</p>
                 {% endif %}
               </td>
+              <td>{{x.cantidad}}</td>
 
               <td>
                 <a href="{% url 'libro_del' pk=x.isbn %}">Eliminar Producto</a>

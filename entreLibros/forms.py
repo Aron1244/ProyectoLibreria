@@ -20,5 +20,5 @@ class CategoriaForm(ModelForm):
 class Libroform(ModelForm):
     class Meta:
         model = Libro
-        fields = ["nombre_libro","autor","saga","nro_pag","isbn","encuadernacion", "dimensiones","precio","categoria","portada"]
+        fields = ["nombre_libro","autor","saga","nro_pag","isbn","encuadernacion", "dimensiones","precio","categoria","portada","cantidad"]
         labels = {'nombre_libro':'Nombre','autor': 'Autor', 'saga':'Saga','nro_pag':'N° Páginas','isbn':'ISBN','encuadernacion':'Encuadernación','dimensiones': 'Dimensiones','precio': 'Precio','Categoria':'Categoría','Portada':'Portada'}

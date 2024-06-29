@@ -27,6 +27,7 @@ class Libro(models.Model):
     precio          = models.FloatField(max_length=15)
     categoria       = models.ForeignKey('Categoria', on_delete=models.CASCADE,db_column='idCategoria')
     portada         = models.ImageField(upload_to='portadas/', blank=True, null=True)
+    cantidad        = models.IntegerField()
 
     def __str__(self):
         return str(self.nombre_libro)
